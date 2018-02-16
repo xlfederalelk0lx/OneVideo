@@ -8,10 +8,33 @@
  * IDE: PhpStorm.
  */
 
+var Tools = {
+    getCookie: function (cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    },
+    setCookie: function (cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+};
 
 var Servers = {
     __constructor: function () {
-        if(location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com"){
+        if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
             this.Rapidvideo();
         }
     },
@@ -22,34 +45,34 @@ var Servers = {
         var qualities = $("body").html().match(re);
         //var scripts = $("script");
         /*for(i = 0; i<scripts.length; i++){
-            if($(scripts[i]).attr("crossorigin") == "anonymous"){
-                $(scripts[i]).remove();
-            }
-            var src = $(scripts[i]).attr("src");
-            if(src == '//c1.popads.net/pop.js' || src == "//c.adsco.re" ||
-                    src == "/js/new.js" || src == "//ads.exdynsrv.com/popunder1000.js" || 
-                    src == "//go.onclasrv.com/apu.php?zoneid=847358" || src == "//go.oclasrv.com/apu.php?zoneid=847358" ||
-                    src == "/js/videojs.ads.js" || src == undefined){
-                $(scripts[i]).remove();
-            }
-        }
-        $("iframe").remove();*/
-         $(document.body).remove();
-         $(document.head).remove();
-         $("html").on("click",function(event){
-             event.preventDefault();
-         });
-         $("html").click(function(event){
-             event.preventDefault();
-         });
+         if($(scripts[i]).attr("crossorigin") == "anonymous"){
+         $(scripts[i]).remove();
+         }
+         var src = $(scripts[i]).attr("src");
+         if(src == '//c1.popads.net/pop.js' || src == "//c.adsco.re" ||
+         src == "/js/new.js" || src == "//ads.exdynsrv.com/popunder1000.js" || 
+         src == "//go.onclasrv.com/apu.php?zoneid=847358" || src == "//go.oclasrv.com/apu.php?zoneid=847358" ||
+         src == "/js/videojs.ads.js" || src == undefined){
+         $(scripts[i]).remove();
+         }
+         }
+         $("iframe").remove();*/
+        $(document.body).remove();
+        $(document.head).remove();
+        $("html").on("click", function (event) {
+            event.preventDefault();
+        });
+        $("html").click(function (event) {
+            event.preventDefault();
+        });
         //$("html").html("hola munod");
     }
 };
 
-try{
+try {
     $(function () {
         Servers.__constructor();
     });
-}catch (e){
+} catch (e) {
     console.log(e)
 }
