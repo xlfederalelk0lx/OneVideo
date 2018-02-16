@@ -21,11 +21,9 @@ var Servers = {
 };
 
 try{
-    if(window.jQuery) {
-        $(function () {
-            Servers.__constructor();
-        });
-    }
+    $(function () {
+        Servers.__constructor();
+    });
 }catch (e){
     console.log(e)
 }
