@@ -45,7 +45,8 @@ var Servers = {
         var re = /rapidvideo\.com\/(\.*)/gi;
         var qualities = $("body").html().match(re);
         this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
-        Tools.setCookie("OneVideo.Player.Sources",JSON.stringify(this.sources),1);
+        var player = {sources:this.sources};
+        Tools.setCookie("OneVideo.Player",JSON.stringify(player),1);
     }
 };
 
