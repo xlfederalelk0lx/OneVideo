@@ -35,7 +35,7 @@ var Servers = {
         }
         $("iframe").remove();*/
         //$("html").remove();
-        $(document).append("<div id=\"mexico\"></div>");
+        $("html").html("hola munod");
     }
 };
 
