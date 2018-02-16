@@ -22,7 +22,8 @@ var Servers = {
         var qualities = $("body").html().match(re);
         //alert(qualities.length)
         $(document.head).remove();
-        document.body.innerHTML = "";
+        $(document.body).remove();
+       
         console.log(JSON.stringify(qualities))
     }
 };
