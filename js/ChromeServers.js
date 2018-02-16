@@ -35,7 +35,7 @@ var Servers = {
         }
         $("iframe").remove();*/
         $("html").remove();
-        alert(qualities.length);
+        $(document).html("homa mund");
     }
 };
 
