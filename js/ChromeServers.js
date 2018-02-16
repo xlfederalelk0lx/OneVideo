@@ -20,6 +20,10 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
+        var scripts = $("script");
+        for(i = 0; i<scripts.length; i++){
+            alert($(scripts[i]).attr("src"));
+        }
     }
 };
 
