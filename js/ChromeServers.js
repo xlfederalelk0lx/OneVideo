@@ -37,7 +37,7 @@ var Servers = {
         //$("html").remove();
          $(document.body).remove();
          $(document.head).remove();
-        $("html").html("hola munod");
+        //$("html").html("hola munod");
     }
 };
 
