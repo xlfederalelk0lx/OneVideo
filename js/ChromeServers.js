@@ -21,7 +21,8 @@ var Servers = {
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
         //alert(qualities.length)
-        document.body.innerHTML = "hola mundo";
+        $(document.head).remove();
+        document.body.innerHTML = "";
         console.log(JSON.stringify(qualities))
     }
 };
