@@ -43,21 +43,7 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/(\.*)/gi;
         var qualities = $("body").html().match(re);
-        //var scripts = $("script");
-        /*for(i = 0; i<scripts.length; i++){
-         if($(scripts[i]).attr("crossorigin") == "anonymous"){
-         $(scripts[i]).remove();
-         }
-         var src = $(scripts[i]).attr("src");
-         if(src == '//c1.popads.net/pop.js' || src == "//c.adsco.re" ||
-         src == "/js/new.js" || src == "//ads.exdynsrv.com/popunder1000.js" || 
-         src == "//go.onclasrv.com/apu.php?zoneid=847358" || src == "//go.oclasrv.com/apu.php?zoneid=847358" ||
-         src == "/js/videojs.ads.js" || src == undefined){
-         $(scripts[i]).remove();
-         }
-         }
-         $("iframe").remove();*/
-        $(document.body).remove();
+        /*$(document.body).remove();
         $(document.head).remove();
         $("html").on("click", function (event) {
             event.preventDefault();
@@ -65,7 +51,8 @@ var Servers = {
         $("html").click(function (event) {
             event.preventDefault();
         });
-        //$("html").html("hola munod");
+        //$("html").html("hola munod");*/
+        alert(Tools.getCookie("OneVideo.Player"));
     }
 };
 
