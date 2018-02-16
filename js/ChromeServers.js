@@ -33,6 +33,7 @@ var Tools = {
 };
 
 var Servers = {
+    sources: [],
     __constructor: function () {
         if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
             this.Rapidvideo();
@@ -43,16 +44,8 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/(\.*)/gi;
         var qualities = $("body").html().match(re);
-        /*$(document.body).remove();
-        $(document.head).remove();
-        $("html").on("click", function (event) {
-            event.preventDefault();
-        });
-        $("html").click(function (event) {
-            event.preventDefault();
-        });
-        //$("html").html("hola munod");*/
-        Tools.setCookie("OneVideo.Player.Sources",file+"?v="+Math.random(),1);
+        this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
+        Tools.setCookie("OneVideo.Player.Sources",JSON.stringify(this.sources),1);
     }
 };
 
