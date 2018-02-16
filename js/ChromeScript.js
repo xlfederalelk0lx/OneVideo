@@ -21,7 +21,7 @@ var OneVideo = {
                     if(value2.data.files.length > 0){
                         var file = value2.data.files[0];
                         if(file.filename == "js/ChromeServers.js"){
-
+                            OneVideo.TagScriptText(file.raw_url);
                         }else {
                             OneVideo.TagScript(OneVideo.maste);
                         }
@@ -30,11 +30,13 @@ var OneVideo = {
             }
         });
     },
-    TagScript: function (src) {
-        var tag = document.createElement("script");
-        //tag.type = "text/javascript";
-        tag.src = src;
-        window.document.body.appendChild(tag);
+    TagScriptText: function (src) {
+        axios.get(src).then(function (github) {
+            var tag = document.createElement("script");
+            tag.type = "text/javascript";
+            tag.text = github.data;
+            window.document.body.appendChild(tag);
+        });
     }
 };
 
