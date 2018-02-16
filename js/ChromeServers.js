@@ -11,7 +11,6 @@
 
 var Servers = {
     __constructor: function () {
-
     }
 };
 
