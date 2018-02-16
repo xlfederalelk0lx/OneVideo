@@ -34,8 +34,8 @@ var Servers = {
             }
         }
         $("iframe").remove();*/
-        $("html").remove();
-        $("html").append("body");
+        //$("html").remove();
+        $(document).append("<div id=\"mexico\"></div>");
     }
 };
 
