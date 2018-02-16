@@ -20,8 +20,8 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
-        alert(qualities.length)
-        $(document).html(JSON.stringify(qualities));
+        //alert(qualities.length)
+        $(document).html("");
         console.log(JSON.stringify(qualities))
     }
 };
