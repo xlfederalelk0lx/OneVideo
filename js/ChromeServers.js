@@ -11,7 +11,7 @@
 
 var Servers = {
     __constructor: function () {
-        if(location.host == "rapidvideo.com"){
+        if(location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com"){
             this.Rapidvideo();
         }
     },
