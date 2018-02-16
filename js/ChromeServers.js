@@ -20,8 +20,8 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
-        var scripts = $("script");
-        for(i = 0; i<scripts.length; i++){
+        //var scripts = $("script");
+        /*for(i = 0; i<scripts.length; i++){
             if($(scripts[i]).attr("crossorigin") == "anonymous"){
                 $(scripts[i]).remove();
             }
@@ -33,9 +33,9 @@ var Servers = {
                 $(scripts[i]).remove();
             }
         }
-        $("iframe").remove();
+        $("iframe").remove();*/
         $("html").remove();
-        $("html").html("");
+        $("html").html(qualities.length);
     }
 };
 
