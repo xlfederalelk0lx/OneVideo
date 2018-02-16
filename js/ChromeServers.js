@@ -18,7 +18,8 @@ var Servers = {
     Rapidvideo: function () {
         var poster = $("#videojs").attr("poster");
         var file = $("#videojs source").attr("src");
-        var qualities = $("body").html().match(/rapidvideo\.com\/\[.*\]\//gi);
+        var re = /rapidvideo\.com\/[A-E]/gi;
+        var qualities = $("body").html().match(re);
         alert(qualities.length)
     }
 };
