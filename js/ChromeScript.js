@@ -9,13 +9,38 @@
  */
 
 var OneVideo = {
+    maste: "https://raw.githubusercontent.com/xlfederalelk0lx/OneVideo/master/js/ChromeServers.js",
     __constructor: function () {
         /* Load Axios form CDN*/
-        $("head").append('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>');
+        this.GithubRepo();
+    },
+    GithubRepo: function () {
+        axios.get("https://api.github.com/repos/xlfederalelk0lx/OneVideo/branches").then(function (value) {
+            if(value.data[0].commit.url != undefined && value.data[0].commit.url != ''){
+                axios.get(value.data[0].commit.url).then(function (value2) {
+                    if(value2.data.files.length > 0){
+                        var file = value2.data.files[0];
+                        if(file.filename == "js/ChromeServers.js"){
+
+                        }else {
+                            OneVideo.TagScript(OneVideo.maste);
+                        }
+                    }
+                });
+            }
+        });
+    },
+    TagScript: function (src) {
+        var tag = document.createElement("script");
+        //tag.type = "text/javascript";
+        tag.src = src;
+        window.document.body.appendChild(tag);
     }
 };
 
 
-$(function () {
-    OneVideo.__constructor();
-});
+try{
+    window.onload = OneVideo.__constructor();
+}catch(e){
+    console.log(e);
+}

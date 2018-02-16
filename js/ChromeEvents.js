@@ -21,6 +21,7 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (tab.status == 'complete') {
         chrome.tabs.executeScript(tabId, {file: "js/ChromeJquery.js"});
-        chrome.tabs.executeScript(tabId, {file: "js/ChromeScript.js?v"+time});
+        chrome.tabs.executeScript(tabId, {file: "js/axios.js"});
+        chrome.tabs.executeScript(tabId, {file: "js/ChromeScript.js"});
     }
 });
