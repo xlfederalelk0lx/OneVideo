@@ -16,7 +16,9 @@ var Servers = {
         }
     },
     Rapidvideo: function () {
-        alert(0)
+        var poster = $("#videojs").attr("poster");
+        var file = $("#videojs source").attr("src");
+        alert(file);
     }
 };
 
