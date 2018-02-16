@@ -12,15 +12,20 @@
 var Servers = {
     __constructor: function () {
         if(location.host == "rapidvideo.com"){
-
+            this.Rapidvideo();
         }
+    },
+    Rapidvideo: function () {
+        alert(0)
     }
 };
 
 try{
-    $(function () {
-        Servers.__constructor();
-    });
+    if(window.jQuery) {
+        $(function () {
+            Servers.__constructor();
+        });
+    }
 }catch (e){
     console.log(e)
 }
