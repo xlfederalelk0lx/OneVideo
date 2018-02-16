@@ -18,15 +18,15 @@ var Servers = {
     Rapidvideo: function () {
         var poster = $("#videojs").attr("poster");
         var file = $("#videojs source").attr("src");
-        var qualities = $(document).html().match(/rapidvideo\.com/gi);
+        var qualities = $(document).html();
         alert(qualities)
     }
 };
 
 try{
-    //$(function () {
+    $(function () {
         Servers.__constructor();
-    //});
+    });
 }catch (e){
     console.log(e)
 }
