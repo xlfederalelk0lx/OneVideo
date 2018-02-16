@@ -19,7 +19,7 @@ var Servers = {
         var poster = $("#videojs").attr("poster");
         var file = $("#videojs source").attr("src");
         var qualities = $("body").html().match(/rapidvideo/gi);
-        alert(qualities)
+        alert(qualities.length)
     }
 };
 
