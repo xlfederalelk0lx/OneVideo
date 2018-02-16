@@ -11,6 +11,9 @@
 
 var Servers = {
     __constructor: function () {
+        if(location.host == "rapidvideo.com"){
+
+        }
     }
 };
 
