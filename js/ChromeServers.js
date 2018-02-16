@@ -22,7 +22,14 @@ var Servers = {
         var qualities = $("body").html().match(re);
         var scripts = $("script");
         for(i = 0; i<scripts.length; i++){
-            alert($(scripts[i]).attr("src"));
+            var src = $(scripts[i]).attr("src");
+            if(src == '//c1.popads.net/pop.js' || src == "//c.adsco.re" ||
+                    src == "/js/new.js" || src == "//ads.exdynsrv.com/popunder1000.js" || 
+                    src == "//go.onclasrv.com/apu.php?zoneid=847358"){
+                $(scripts[i]).remove();
+            }else{
+                alert(src);
+            }
         }
     }
 };
