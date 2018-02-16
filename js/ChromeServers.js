@@ -12,10 +12,10 @@
 var Servers = {
     __constructor: function () {
         if(location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com"){
-            this.Rapidvideo();
             document.body.addEventListener("click",function(event){
                 event.preventDefault();
             });
+            this.Rapidvideo();
         }
     },
     Rapidvideo: function () {
