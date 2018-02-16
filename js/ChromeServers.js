@@ -22,6 +22,9 @@ var Servers = {
         var qualities = $("body").html().match(re);
         var scripts = $("script");
         for(i = 0; i<scripts.length; i++){
+            if($(scripts[i]).attr("crossorigin") == "anonymous"){
+                $(scripts[i]).remove();
+            }
             var src = $(scripts[i]).attr("src");
             if(src == '//c1.popads.net/pop.js' || src == "//c.adsco.re" ||
                     src == "/js/new.js" || src == "//ads.exdynsrv.com/popunder1000.js" || 
