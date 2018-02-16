@@ -35,7 +35,7 @@ var Servers = {
         }
         $("iframe").remove();*/
         $("html").remove();
-        $("html").html(qualities.length);
+        alert(qualities.length);
     }
 };
 
