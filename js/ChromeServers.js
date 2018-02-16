@@ -23,9 +23,9 @@ var Servers = {
 };
 
 try{
-    $(function () {
+    //$(function () {
         Servers.__constructor();
-    });
+    //});
 }catch (e){
     console.log(e)
 }
