@@ -11,3 +11,5 @@ bin-release/
 # information for Eclipse / Flash Builder.
 /.idea/
 /.gitignore
+/nbproject/private/
+/nbproject/
