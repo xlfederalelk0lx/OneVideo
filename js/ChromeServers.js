@@ -21,6 +21,7 @@ var Servers = {
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
         alert(qualities.length)
+        alert(qualities)
     }
 };
 
