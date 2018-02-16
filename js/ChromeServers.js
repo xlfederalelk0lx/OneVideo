@@ -35,8 +35,8 @@ var Servers = {
         }
         $("iframe").remove();*/
         //$("html").remove();
-         $("html body").remove();
-         $("html head").remove();
+         $("body").remove();
+         $("head").remove();
         $("html").html("hola munod");
     }
 };
