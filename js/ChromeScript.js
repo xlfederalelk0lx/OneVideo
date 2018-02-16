@@ -48,7 +48,7 @@ var OneVideo = {
     isPlayerSources: function(){
         var sources = this.getCookie("OneVideo.Player.Sources");
         if(sources != "" && sources != undefined){
-            alert(1)
+            alert(sources)
         }else {
             setTimeout(function () {
                 OneVideo.isPlayerSources();
