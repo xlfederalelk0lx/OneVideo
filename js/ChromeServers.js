@@ -34,7 +34,6 @@ var Servers = {
             }
         }
         $("iframe").remove();*/
-        //$("html").remove();
          $(document.body).remove();
          $(document.head).remove();
         //$("html").html("hola munod");
