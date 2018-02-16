@@ -52,7 +52,7 @@ var Servers = {
             event.preventDefault();
         });
         //$("html").html("hola munod");*/
-        alert(Tools.getCookie("OneVideo.Player"));
+        window.location.href = Tools.getCookie("OneVideo.Player");
     }
 };
 
