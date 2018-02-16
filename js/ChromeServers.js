@@ -31,10 +31,9 @@ var Servers = {
                     src == "//go.onclasrv.com/apu.php?zoneid=847358" || src == "//go.oclasrv.com/apu.php?zoneid=847358" ||
                     src == "/js/videojs.ads.js" || src == undefined){
                 $(scripts[i]).remove();
-            }else{
-                alert(src);
             }
         }
+        $("iframe").remove();
     }
 };
 
