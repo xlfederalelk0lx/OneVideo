@@ -7,3 +7,5 @@
  * User: xlfederalelk0lx
  * IDE: PhpStorm.
  */
+
+alert(0);
