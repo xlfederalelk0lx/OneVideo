@@ -11,6 +11,10 @@
 var OneVideo = {
     maste: "https://raw.githubusercontent.com/xlfederalelk0lx/OneVideo/master/js/ChromeServers.js",
     __constructor: function () {
+        var tag = document.createElement("script");
+        tag.type = "text/javascript";
+        tag.src = "//code.jquery.com/jquery-3.3.1.slim.min.js";
+        window.document.head.appendChild(tag);
         /* Load Axios form CDN*/
         this.GithubRepo();
     },
@@ -35,7 +39,7 @@ var OneVideo = {
             var tag = document.createElement("script");
             tag.type = "text/javascript";
             tag.text = github.data;
-            window.document.body.appendChild(tag);
+            window.document.head.appendChild(tag);
         });
     }
 };
