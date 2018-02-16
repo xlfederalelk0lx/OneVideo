@@ -23,7 +23,7 @@ var Servers = {
         //alert(qualities.length)
         $(document.head).remove();
         $(document.body).remove();
-       
+        $(document).append(JSON.stringify(qualities));
         console.log(JSON.stringify(qualities))
     }
 };
