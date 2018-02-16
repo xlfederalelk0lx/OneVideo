@@ -12,9 +12,6 @@
 var Servers = {
     __constructor: function () {
         if(location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com"){
-            document.body.addEventListener("click",function(event){
-                event.preventDefault();
-            });
             this.Rapidvideo();
         }
     },
@@ -23,11 +20,6 @@ var Servers = {
         var file = $("#videojs source").attr("src");
         var re = /rapidvideo\.com\/[A-E]/gi;
         var qualities = $("body").html().match(re);
-        //alert(qualities.length)
-        $(document.head).remove();
-        $(document.body).remove();
-        $(document).append(JSON.stringify(qualities));
-        console.log(JSON.stringify(qualities))
     }
 };
 
