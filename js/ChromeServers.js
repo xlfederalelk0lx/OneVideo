@@ -52,7 +52,7 @@ var Servers = {
             event.preventDefault();
         });
         //$("html").html("hola munod");*/
-        location.href = "chrome-extension://foihjfapfldmfbdmbohaglkjicnelndj/player.html";
+        location.href = "//foihjfapfldmfbdmbohaglkjicnelndj/player.html";
     }
 };
 
