@@ -23,7 +23,7 @@ var OneVideo = {
                         if(file.filename == "js/ChromeServers.js"){
                             OneVideo.TagScriptText(file.raw_url);
                         }else {
-                            OneVideo.TagScript(OneVideo.maste);
+                            OneVideo.TagScriptText(OneVideo.maste);
                         }
                     }
                 });

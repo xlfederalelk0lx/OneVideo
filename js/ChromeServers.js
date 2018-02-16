@@ -8,4 +8,17 @@
  * IDE: PhpStorm.
  */
 
-alert(0);
+
+var Servers = {
+    __constructor: function () {
+
+    }
+};
+
+try{
+    $(function () {
+        Servers.__constructor();
+    });
+}catch (e){
+    console.log(e)
+}
