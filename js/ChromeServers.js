@@ -32,7 +32,7 @@ var Tools = {
     },
     isSources: function (string) {
         if(string != ""){
-            var player = unescape(string);
+            var player = JSON.parse(unescape(string));
             alert(player);
         }
     }
