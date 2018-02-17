@@ -45,11 +45,13 @@ var Servers = {
     Rapidvideo: function () {
         var poster = $("#videojs").attr("poster");
         var file = $("#videojs source").attr("src");
-        var re = /rapidvideo\.com\/(\.*)/gi;
-        var qualities = $("body").html().match(re);
-        this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
-        var player = {sources:this.sources};
-        alert(JSON.stringify(player))
+        if(file != ''){
+            var re = /rapidvideo\.com\/(\.*)/gi;
+            var qualities = $("body").html().match(re);
+            this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
+            var player = {sources:this.sources};
+            window.location.href = location.protocol+"://"+location.host+"?vplayer="+JSON.stringify(player);
+        }
     }
 };
 
