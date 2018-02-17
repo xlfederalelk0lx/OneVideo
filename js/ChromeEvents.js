@@ -19,8 +19,15 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    var url = new URL(tab.url);
+    if(tab.status == "loading"){
+        chrome.cookies.set({name:"OneVideo.Player",domain:url.host,expirationDate:0,value:""});
+    }
     if (tab.status == 'complete') {
-        chrome.tabs.executeScript(tabId, {file: "js/axios.js"});
-        chrome.tabs.executeScript(tabId, {file: "js/ChromeScript.js"});
+        chrome.cookies.getAll({name:"OneVideo.Player",domain:url.host},function (cookies) {
+            if(cookies.length > 0){
+                chrome.tabs.update(tabId,{url:"http://localhost/onevideo_player?player="+escape(JSON.stringify(cookies[0].value))});
+            }
+        });
     }
 });
