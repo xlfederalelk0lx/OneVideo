@@ -33,7 +33,9 @@ var Tools = {
     isSources: function (string) {
         if(string != ""){
             var player = JSON.parse(unescape(string));
-            alert(player);
+            if(player.sources.length > 0){
+                $(document.body).attr("id","OneVideoPlayer");
+            }
         }
     }
 };
