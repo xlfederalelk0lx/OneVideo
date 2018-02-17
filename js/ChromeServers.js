@@ -35,6 +35,20 @@ var Tools = {
             var player = JSON.parse(unescape(string));
             if(player.sources.length > 0){
                 $(document.body).attr("id","OneVideoPlayer");
+                $(function () {
+                    jwplayer('OneVideoPlayer').setup({
+                        sources: player.sources,
+                        image: "",
+                        width: $(document).width(),
+                        height: $(document).height(),
+                        primary: 'html5',
+                        provider: 'http',
+                        startparam: 'start',
+                        preload: 'metadata',
+                        allowscriptaccess: 'always',
+                        allowfullscreen: true
+                    });
+                });
             }
         }
     }
