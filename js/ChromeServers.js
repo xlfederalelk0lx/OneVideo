@@ -32,8 +32,8 @@ var Tools = {
     },
     isSources: function (string) {
         if(string != ""){
-            var player = JSON.parse(unescape(string));
-            alert(string);
+            var player = JSON.parse(string);
+            alert(player);
         }
     }
 };
@@ -57,7 +57,7 @@ var Servers = {
             var qualities = $("body").html().match(re);
             this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
             var player = {sources:this.sources};
-            location.href = "https://"+location.host+"#"+escape(JSON.stringify(player));
+            location.href = "https://"+location.host+"#"+JSON.stringify(player);
         }
     }
 };
