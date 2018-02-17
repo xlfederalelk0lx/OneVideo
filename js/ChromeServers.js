@@ -53,7 +53,8 @@ var Tools = {
                         startparam: 'start',
                         preload: 'metadata',
                         allowscriptaccess: 'always',
-                        allowfullscreen: true
+                        allowfullscreen: true,
+                        key: "I+YiqNoEuqPlpz2ql2ekTu/LsIW//3QzjsIsuvXI+pvBYefzOufWp9SZHUU="
                     });
                 });
             }
