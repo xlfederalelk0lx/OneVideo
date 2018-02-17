@@ -40,6 +40,7 @@ var Servers = {
             if(data[3] == "e" || data[3] == "v"){
                 this.Rapidvideo();
             }
+            alert(location.hash)
         }
     },
     Rapidvideo: function () {
