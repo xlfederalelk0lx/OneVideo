@@ -10,7 +10,7 @@
 
 var Servers = {
     __constructor: function () {
-        alert(0)
+        $(document.body).html("hola mundo")
     }
 };
 
