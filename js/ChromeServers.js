@@ -34,7 +34,7 @@ var Tools = {
         if(string != ""){
             var player = JSON.parse(unescape(string));
             if(player.sources.length > 0){
-                $(document.body).attr("id","OneVideoPlayer");
+                $(document.body).html('<div id="OneVideoPlayer"></div>');
                 $(function () {
                     jwplayer('OneVideoPlayer').setup({
                         sources: player.sources,
