@@ -35,9 +35,10 @@ var Tools = {
 var Servers = {
     sources: [],
     __constructor: function () {
-        if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
-            this.Rapidvideo();
-        }
+        /*if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
+           // this.Rapidvideo();
+        }*/
+        alert(location.toString().match(/rapidvideo\.com\/v/gi).length);
     },
     Rapidvideo: function () {
         var poster = $("#videojs").attr("poster");
