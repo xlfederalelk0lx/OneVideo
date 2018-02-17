@@ -35,12 +35,12 @@ var Tools = {
 var Servers = {
     sources: [],
     __constructor: function () {
-        var data = location.toString().split("/");
-        alert(data);
-
-        /*if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
-           // this.Rapidvideo();
-        }*/
+        if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
+            var data = location.toString().split("/");
+            if(data[3] == "e" || data[3] == "v"){
+                this.Rapidvideo();
+            }
+        }
     },
     Rapidvideo: function () {
         var poster = $("#videojs").attr("poster");
@@ -49,7 +49,6 @@ var Servers = {
         var qualities = $("body").html().match(re);
         this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
         var player = {sources:this.sources};
-        Tools.setCookie("OneVideo.Player",JSON.stringify(player),1);
     }
 };
 
