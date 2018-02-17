@@ -32,13 +32,13 @@ var Tools = {
     },
     isSources: function (string) {
         if(string != ""){
-            var scripts = $("script");
+            /*var scripts = $("script");
             for(i=0;i<scripts.length;i++){
                 var src = $(scripts[i]).attr("src");
                 if(src != "//code.jquery.com/jquery-3.3.1.slim.min.js" && src != "https://content.jwplatform.com/libraries/Pbut16oC.js"){
                     $(scripts[i]).remove();
                 }
-            }
+            }*/
             var player = JSON.parse(unescape(string));
             if(player.sources.length > 0){
                 $(document.body).html('<div id="OneVideoPlayer"></div>');
