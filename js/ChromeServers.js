@@ -35,8 +35,11 @@ var Tools = {
 var Servers = {
     sources: [],
     __constructor: function () {
-        if(location.toString().match(/rapidvideo\.com\/v/gi).length > 0 || location.toString().match(/rapidvideo\.com\/e/gi).length > 0){
+        if(location.toString().match(/rapidvideo\.com\/v/gi).length > 0){
             alert(0)
+        }
+        if(location.toString().match(/rapidvideo\.com\/e/gi).length > 0){
+            alert(2)
         }
 
         /*if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
