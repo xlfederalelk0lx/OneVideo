@@ -38,6 +38,7 @@ var Servers = {
         if(location.toString().match(/rapidvideo\.com\/v/gi).length > 0 || location.toString().match(/rapidvideo\.com\/e/gi).length > 0){
             alert(0)
         }
+
         /*if (location.host == "rapidvideo.com" || location.host == "www.rapidvideo.com") {
            // this.Rapidvideo();
         }*/
