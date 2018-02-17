@@ -50,7 +50,8 @@ var Servers = {
             var qualities = $("body").html().match(re);
             this.sources.push({file:file,label:"360p",type:"video/mp4",default:true});
             var player = {sources:this.sources};
-            window.location.href = location.protocol+"://"+location.host+"?vplayer="+JSON.stringify(player);
+            //location.href = location.protocol+"://"+location.host+"?vplayer="+JSON.stringify(player);
+            location.href = location.protocol+"://"+location.host
         }
     }
 };
