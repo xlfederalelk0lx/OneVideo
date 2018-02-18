@@ -37,7 +37,9 @@ chrome.runtime.onInstalled.addListener(function () {
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (tab.status == 'complete') {
-        chrome.tabs.executeScript(tabId, {file: "js/ChromeHosts.js"});
+        Github.Http("https://raw.githubusercontent.com/xlfederalelk0lx/OneVideo/master/js/ChromeHosts.js",function () {
+            chrome.tabs.executeScript(tabId, {code: Github.response});
+        });
     }
 });
 

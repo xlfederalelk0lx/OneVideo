@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "OneVideo",
-  "description": "Extension for the chrome browser, to be able to eliminate the invasive advertising of some video pages like rapidvideo, openload, streamago, etc",
-  "version": "3",
+  "description": "To be able to eliminate the invasive advertising of some video pages like rapidvideo, openload, streamago, etc",
+  "version": "3.01",
   "author" : "Jose Luis Coyotzi Ipatzi",
   "icons": {
     "128": "images/default_icon.png"
