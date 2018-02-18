@@ -8,6 +8,23 @@
  * IDE: PhpStorm.
  */
 
+var Github = {
+    response: "",
+    Http: function (url,callback) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                Github.response = this.responseText;
+                if(typeof callback == "function"){
+                    callback();
+                }
+            }
+        };
+        xhttp.open("GET",url, true);
+        xhttp.send();
+    }
+}
+
 chrome.runtime.onInstalled.addListener(function () {
     chrome.tabs.getAllInWindow(function (tabs) {
         for (i = 0; i < tabs.length; i++) {
@@ -19,15 +36,8 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    var url = new URL(tab.url);
-    if(tab.status == "loading"){
-        chrome.cookies.set({name:"OneVideo.Player",domain:url.host,expirationDate:0,value:""});
-    }
     if (tab.status == 'complete') {
-        chrome.cookies.getAll({name:"OneVideo.Player",domain:url.host},function (cookies) {
-            if(cookies.length > 0){
-                chrome.tabs.update(tabId,{url:"http://localhost/onevideo_player?player="+escape(JSON.stringify(cookies[0].value))});
-            }
-        });
+        chrome.tabs.executeScript(tabId, {file: "js/ChromeHosts.js"});
     }
 });
+

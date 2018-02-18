@@ -12,13 +12,20 @@
       "js/ChromeEvents.js"
     ]
   },
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "css": ["css/video-js.5.8.3.css","css/fb-skin.css","css/videojs-resolution-switcher.css"],
+    "js": ["js/ChromeJquery.js","js/video.5.8.3.js","js/videojs-resolution-switcher.js","js/unPacker.js"],
+    "all_frames": true
+  }],
   "permissions": [
     "cookies",
     "tabs",
     "http://*/",
     "https://*/",
     "unlimitedStorage",
-    "webRequest"
+    "webRequest",
+    "activeTab"
   ],
   "browser_action": {
     "default_title": "OneVideo",
